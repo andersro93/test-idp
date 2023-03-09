@@ -1,0 +1,57 @@
+@page
+@inject List<TestUser> _testUsers;
+@using Duende.IdentityServer.Test
+@using IdentityModel
+@model TestIdp.Pages.Login.Index
+
+<div class="users-page">
+    <div class="lead">
+        <h1>Users</h1>
+        <p>Here is a list of users that can be used to authenticate with the TestIdp</p>
+    </div>
+
+    <div class="row">
+        <table class="table">
+            <thead>
+            <th scope="col">
+                First Name
+            </th>
+            <th scope="col">
+                Last Name
+            </th>
+            <th scope="col">
+                Phone Number
+            </th>
+            <th scope="col">
+                Username / Email
+            </th>
+            <th scope="col">
+                Password
+            </th>
+            </thead>
+            <tbody>
+            @foreach (var user in _testUsers)
+            {
+                <tr>
+                    <td>
+                        @user.Claims.First(claim => claim.Type == JwtClaimTypes.GivenName).Value
+                    </td>
+                    <td>
+                        @user.Claims.First(claim => claim.Type == JwtClaimTypes.FamilyName).Value
+                    </td>
+                    <td>
+                        @user.Claims.First(claim => claim.Type == JwtClaimTypes.PhoneNumber).Value
+                    </td>
+                    <td>
+                        @user.Username
+                    </td>
+                    <td>
+                        @user.Password
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+        
+    </div>
+</div>

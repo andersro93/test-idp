@@ -1,7 +1,4 @@
 using Duende.IdentityServer;
-using TestIdp;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Serilog;
 
 namespace TestIdp;
 
@@ -58,9 +55,7 @@ internal static class HostingExtensions
     }
     
     public static WebApplication ConfigurePipeline(this WebApplication app)
-    { 
-        app.UseSerilogRequestLogging();
-    
+    {
         if (app.Environment.IsDevelopment())
         {
             app.UseDeveloperExceptionPage();

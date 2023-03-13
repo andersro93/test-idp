@@ -9,14 +9,11 @@ public static class Config
         {
             new IdentityResources.OpenId(),
             new IdentityResources.Profile(),
+            new ("ssn", "Social Security Number", new []{"ssn"}),
         };
 
     public static IEnumerable<ApiScope> ApiScopes =>
-        new ApiScope[]
-        {
-            new ApiScope("scope1"),
-            new ApiScope("scope2"),
-        };
+        new ApiScope[] { };
 
     public static IEnumerable<Client> Clients =>
         new Client[]
@@ -24,7 +21,7 @@ public static class Config
             // m2m client credentials flow client
             new Client
             {
-                ClientId = "m2m.client",
+                ClientId = "client-credential-client",
                 ClientName = "Client Credentials Client",
 
                 AllowedGrantTypes = GrantTypes.ClientCredentials,

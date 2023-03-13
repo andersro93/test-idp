@@ -23,5 +23,11 @@ public static class UsersFactory
             new (JwtClaimTypes.EmailVerified, "true", ClaimValueTypes.Boolean),
             new (JwtClaimTypes.PhoneNumber, faker.Phone.PhoneNumberFormat(3).Replace(" ", "")), // Creates E164 numbers
             new (JwtClaimTypes.PhoneNumberVerified, "true", ClaimValueTypes.Boolean),
+            new (JwtClaimTypes.Picture, faker.Internet.Avatar()),
+            new (JwtClaimTypes.Gender, faker.Person.Gender.ToString()),
+            new (JwtClaimTypes.WebSite, faker.Person.Website),
+            new (JwtClaimTypes.BirthDate, faker.Person.DateOfBirth.ToShortDateString()),
+            new (JwtClaimTypes.ZoneInfo, "Europe/Oslo"),
+            new (JwtClaimTypes.Locale, "nb_NO"),
         });
 }

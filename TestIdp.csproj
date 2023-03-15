@@ -5,7 +5,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <ContainerBaseImage>mcr.microsoft.com/dotnet/aspnet:7.0-alpine</ContainerBaseImage>
     <ContainerRuntimeIdentifier>linux-x64</ContainerRuntimeIdentifier>
-    <ContainerRegistry>ghcr.io</ContainerRegistry>
     <ContainerImageName>andersro93/test-idp</ContainerImageName>
     <ContainerImageTag>latest</ContainerImageTag>
   </PropertyGroup>

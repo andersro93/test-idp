@@ -1,0 +1,59 @@
+@page
+@using IdentityModel
+@using Duende.IdentityServer.Models
+
+@inject IEnumerable<Client> _clients;
+@model TestIdp.Pages.Login.Index
+
+<div class="users-page">
+    <div class="lead">
+        <h1>Clients</h1>
+        <p>Here is a list of clients that can be used with the IDP</p>
+        <p>All clients have a redirect that allows http://localhost:3000</p>
+    </div>
+
+    <div class="row">
+        <table class="table">
+            <thead>
+            <th scope="col">
+                Name
+            </th>
+            <th scope="col">
+                Client Id
+            </th>
+            <th scope="col">
+                Client Secret
+            </th>
+            <th scope="col">
+                Redirect Uris
+            </th>
+            <th scope="col">
+                Allowed grants
+            </th>
+            </thead>
+            <tbody>
+            @foreach (var client in _clients)
+            {
+                <tr>
+                    <td>
+                        @client.ClientName
+                    </td>
+                    <td>
+                        @client.ClientId
+                    </td>
+                    <td>
+                        @client.ClientId
+                    </td>
+                    <td>
+                        @string.Join(',', client.RedirectUris)
+                    </td>
+                    <td>
+                        @string.Join(',', client.AllowedGrantTypes)
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+        
+    </div>
+</div>

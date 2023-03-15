@@ -24,6 +24,7 @@ isBuilder.AddInMemoryApiScopes(Config.ApiScopes);
 isBuilder.AddInMemoryClients(Config.Clients);
 
 builder.Services.AddSingleton(testUsers);
+builder.Services.AddSingleton(Config.Clients);
 
 var app = builder.Build();
 

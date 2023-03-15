@@ -17,6 +17,8 @@
   </ItemGroup>
   
   <ItemGroup>
+    <ContainerPort Include="80" Type="tcp" />
+    <ContainerEnvironmentVariable Include="ASPNETCORE_URLS" Value="http://0.0.0.0:80" />
     <ContainerLabel Include="org.opencontainers.image.source" Value="https://github.com/andersro93/test-idp" />
     <ContainerLabel Include="org.opencontainers.image.description" Value="A simple idp that can be used in testing and teaching" />
     <ContainerLabel Include="org.opencontainers.image.licenses" Value="MIT" />

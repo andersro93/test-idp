@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ContainerBaseImage>mcr.microsoft.com/dotnet/aspnet:7.0-alpine</ContainerBaseImage>
+    <ContainerBaseImage>mcr.microsoft.com/dotnet/aspnet:7.0</ContainerBaseImage>
     <ContainerRuntimeIdentifier>linux-x64</ContainerRuntimeIdentifier>
     <ContainerImageName>andersro93/test-idp</ContainerImageName>
     <ContainerImageTag>latest</ContainerImageTag>

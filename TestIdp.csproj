@@ -3,17 +3,27 @@
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ContainerBaseImage>mcr.microsoft.com/dotnet/aspnet:7.0-alpine</ContainerBaseImage>
+    <ContainerRuntimeIdentifier>linux-x64</ContainerRuntimeIdentifier>
+    <ContainerRegistry>ghcr.io</ContainerRegistry>
+    <ContainerImageName>andersro93/test-idp</ContainerImageName>
+    <ContainerImageTag>latest</ContainerImageTag>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Bogus" Version="34.0.2" />
     <PackageReference Include="Duende.IdentityServer" Version="6.2.3" />
+    <PackageReference Include="Microsoft.NET.Build.Containers" Version="0.3.2" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ContainerLabel Include="org.opencontainers.image.source" Value="https://github.com/andersro93/test-idp" />
+    <ContainerLabel Include="org.opencontainers.image.description" Value="A simple idp that can be used in testing and teaching" />
+    <ContainerLabel Include="org.opencontainers.image.licenses" Value="MIT" />
   </ItemGroup>
   
   <ItemGroup>
     <Using Include="Duende.IdentityServer" />
   </ItemGroup>
-
- 
 
 </Project>

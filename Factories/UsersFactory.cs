@@ -15,7 +15,7 @@ public static class UsersFactory
         .RuleFor(u => u.IsActive, faker => true)
         .RuleFor(u => u.Claims, faker => new List<Claim>()
         {
-            new ("ssn", faker.Person.Fødselsnummer()),
+            new ("ssn", faker.Person.Fodselsnummer()),
             new (JwtClaimTypes.Name, $"{faker.Person.LastName}, {faker.Person.FirstName}"),
             new (JwtClaimTypes.GivenName, faker.Person.FirstName),
             new (JwtClaimTypes.FamilyName, faker.Person.LastName),

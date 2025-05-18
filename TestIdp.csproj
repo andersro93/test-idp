@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <ContainerFamily>alpine</ContainerFamily>
     <ContainerRepository>andersro93/test-idp</ContainerRepository>
@@ -10,8 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bogus" Version="35.5.1" />
-    <PackageReference Include="Duende.IdentityServer" Version="7.0.5" />
+    <PackageReference Include="Bogus" Version="35.6.3" />
+    <PackageReference Include="Duende.IdentityServer" Version="7.2.3" />
   </ItemGroup>
   
   <ItemGroup>

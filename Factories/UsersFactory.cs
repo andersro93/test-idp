@@ -1,8 +1,8 @@
 using System.Security.Claims;
 using Bogus;
 using Bogus.Extensions.Norway;
+using Duende.IdentityModel;
 using Duende.IdentityServer.Test;
-using IdentityModel;
 
 namespace TestIdp.Factories;
 

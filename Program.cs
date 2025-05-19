@@ -6,7 +6,7 @@ using TestIdp.Factories;
 Randomizer.Seed = new Random(1337);
 var testUsers = UsersFactory.Faker.Generate(200);
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateSlimBuilder(args);
 
 builder.Services.AddRazorPages();
 
